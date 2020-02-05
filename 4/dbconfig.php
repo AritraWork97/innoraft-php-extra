@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "aritra";
+$password = "123";
 $database = "login";
 
 // Create connection
