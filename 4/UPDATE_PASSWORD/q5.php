@@ -15,7 +15,7 @@ include_once "../dbconfig.php";
                 $data = htmlspecialchars($data);
                 return $data;
              }
-            
+            $username = $_SESSION['Username'];
             if(isset($_POST['password'])) {
                 $pass = test_input($_POST['password']);
                 $new_pass = test_input($_POST['newpass']);
