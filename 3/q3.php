@@ -1,6 +1,6 @@
 <?php
 
-      echo "<table width='270px' cellspacing='0px' cellpadding='0px' border='1px'>";
+      echo "<table width='270px' cellspacing='5px' cellpadding='0px' border='1px'>";
       for($row=1;$row<=8;$row++)
 	  {
           echo "<tr>";

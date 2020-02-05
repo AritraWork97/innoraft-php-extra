@@ -1,4 +1,5 @@
 <?php
+$res = array();
 
 function check_diff_multi($array1, $array2){
     $result = array();
@@ -10,7 +11,7 @@ function check_diff_multi($array1, $array2){
             }
         }
         elseif(!isset($array2[$key])) {
-            $result[$key] = null;
+            $result[$key] = $val;
         }
         elseif($val !== $array2[$key]) {
             $result[$key] = $array2[$key];
@@ -24,6 +25,22 @@ function check_diff_multi($array1, $array2){
 }
 $array2 = array("a" => "green", "b" => "brown", "100" => array("1"=>"red","orange"), "yellow");
 $array1 = array("a" => "green","100"=>array("1"=>"red","violet"), "yellow","four");
-var_dump(check_diff_multi($array1, $array2));
+
+$res = check_diff_multi($array1, $array2);
+
+foreach($res as $key => $val)
+{
+    if(is_array($val) == true)
+    {
+        foreach($val as $key1 => $val1)
+        {
+            echo $key1 ."\t => ".$val1." ";
+            echo "<br>";
+        }
+    } else {
+     echo $key ."\t => ".$val." ";
+     echo "<br>";
+    }
+}
 
 ?>
