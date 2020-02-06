@@ -16,7 +16,7 @@ function check_diff_multi($array1, $array2){
         elseif($val !== $array2[$key]) {
             $result[$key] = $array2[$key];
         }
-        if(isset($array2[$key])) {
+        else {
             unset($array2[$key]);
         }
     }
