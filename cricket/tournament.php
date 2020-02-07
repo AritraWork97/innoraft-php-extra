@@ -11,6 +11,6 @@ class tournamnet
 }
 
 $obj1 = new tournamnet();
-print_r($obj1 -> test());
+print_r($obj1->test());
 
 ?>

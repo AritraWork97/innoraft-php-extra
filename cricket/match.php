@@ -1,5 +1,6 @@
 <?php
     include ('team.php');
+    include '../vendor/autoload.php';
 
     $match_a = array(
         "kolkata" => array(
@@ -35,27 +36,22 @@
         function create_obj(){
             global $match_a;
             //print_r($match_a);
-            $i = 1;
+            // $i = 1;
             $teams = array();
             foreach($match_a as $key => $val){
-                $teams[$i] = new team($key, $val);
-                $i++;
+                $teams[] = new team($key, $val);
+                // $i++;
             }
-             foreach($teams as $key => $val){
-                 
-                 
-                 foreach($val as $name => $run){
-                     
-                     foreach($run as $k1 => $k2)
-                     {
-                         
-                         foreach($k2 as $a1 => $a2){
-                             echo $a1." ".$a2;
-                             
-                         }
-                     }
-                 }
-             }
+            d($teams);
+            echo $teams->players;
+            // foreach($teams as $team_index => $team_val){
+            //    // d($team_val);
+            //     foreach($team_val as $team_name => $team_details){
+            //         //d($team_details);
+            //         echo "<br>";
+            //     }
+            // }
+            //d($teams);
         }
     }
 
